@@ -7,13 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   menu = [
-    {
-      name: 'Home',
-      url: 'about',
-    },
-    { name: 'About', url: 'about' },
+    { name: 'Home', url: '', current: true },
+    { name: 'Resume', url: 'resume', current: false },
+    { name: 'Portfolio', url: 'portfolio', current: false },
+    { name: 'About', url: 'about', current: false },
   ];
   constructor() {}
 
   ngOnInit(): void {}
+
+  setCurrent(i: number): void {
+    this.menu.map(e => {
+      e.current = false;
+    });
+    this.menu[i].current = true;
+  }
 }

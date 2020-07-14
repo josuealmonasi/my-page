@@ -1,6 +1,16 @@
 <div class="header">
-  <span class="nav-link" *ngFor="let item of menu">
-    <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
-    <a [routerLink]="[item.url]">{{ item.name }}</a>
+  <span class="material-icons logo">
+    code
   </span>
+  <div class="menu">
+    <ng-container *ngFor="let item of menu; let i = index">
+      <a
+        class="item"
+        [ngClass]="{ current: item.current }"
+        (click)="setCurrent(i)"
+        [routerLink]="[item.url]"
+        >{{ item.name }}</a
+      >
+    </ng-container>
+  </div>
 </div>

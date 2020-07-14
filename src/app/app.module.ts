@@ -9,6 +9,9 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { InfoCardComponent } from './shared/info-card/info-card.component';
 import { HomeComponent } from './layout/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AboutComponent } from './layout/about/about.component';
+import { ResumeComponent } from './layout/resume/resume.component';
+import { PortfolioComponent } from './layout/portfolio/portfolio.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +20,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FooterComponent,
     InfoCardComponent,
     HomeComponent,
+    AboutComponent,
+    ResumeComponent,
+    PortfolioComponent,
   ],
   imports: [
     BrowserModule,

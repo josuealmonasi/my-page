@@ -1,5 +1,52 @@
+@import '../../../theme.scss';
+
 .header {
-  height: 40px;
+  height: 80vh;
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  position: relative;
+  padding-top: 20px;
+  background-image: linear-gradient(
+      to right bottom,
+      $header-dark,
+      $header-light
+    ),
+    url(../../../assets/cover.jpg);
   .home {
+  }
+
+  .logo {
+    font-size: 90px;
+    position: absolute;
+    padding: 4px 30px;
+    font-weight: 900;
+  }
+
+  .menu {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+
+    .item {
+      color: $text-color;
+      text-decoration: none;
+      font-size: 1.25rem;
+      margin: 10px 20px;
+      padding: 4px;
+      transition: color 200ms ease-in-out, font-size 200ms ease-in-out;
+
+      &:visited {
+        color: unset;
+      }
+
+      &:hover {
+        color: $hover-link;
+      }
+
+      &.current {
+        color: $hover-link;
+      }
+    }
   }
 }
