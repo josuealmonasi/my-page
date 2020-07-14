@@ -31,7 +31,7 @@
     .item {
       color: $text-color;
       text-decoration: none;
-      font-size: 1.25rem;
+      font-size: 20px;
       margin: 10px 20px;
       padding: 4px;
       transition: color 200ms ease-in-out, font-size 200ms ease-in-out;
@@ -47,6 +47,29 @@
       &.current {
         color: $hover-link;
       }
+    }
+  }
+
+  .title {
+    text-transform: uppercase;
+    display: flex;
+    height: 80%;
+
+    h1 {
+      margin: auto auto auto 20%;
+    }
+
+    &--main {
+      font-family: 'Source Code Pro', monospace;
+      display: block;
+      font-size: 50px;
+      letter-spacing: 15px;
+    }
+
+    &--sub {
+      font-family: 'Source Code Pro', monospace;
+      text-transform: lowercase;
+      letter-spacing: 22px;
     }
   }
 }
