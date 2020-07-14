@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import './theme.scss';
+
+.header {
+  background-color: $footer-color;
+
+  &:hover {
+    background-color: red;
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Playfair Display', serif;
+}

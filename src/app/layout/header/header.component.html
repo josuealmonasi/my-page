@@ -1,0 +1,6 @@
+<div class="header">
+  <span class="nav-link" *ngFor="let item of menu">
+    <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+    <a [routerLink]="[item.url]">{{ item.name }}</a>
+  </span>
+</div>
