@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AboutComponent } from './layout/about/about.component';
 import { ResumeComponent } from './layout/resume/resume.component';
 import { PortfolioComponent } from './layout/portfolio/portfolio.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { PortfolioComponent } from './layout/portfolio/portfolio.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

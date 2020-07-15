@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-header',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
+  faCoffee = faTwitter;
   menu = [
     { name: 'Home', url: '', current: true },
     { name: 'Resume', url: 'resume', current: false },
