@@ -2,7 +2,7 @@
   <span class="material-icons logo">
     code
   </span>
-  <div class="menu">
+  <div class="menu" *ngIf="!mobile; else mobileContent">
     <ng-container *ngFor="let item of menu; let i = index">
       <a
         class="item"
@@ -13,11 +13,15 @@
       >
     </ng-container>
   </div>
+  <ng-template #mobileContent>
+    <div class="menu-mobile">
+      <fa-icon [icon]="menuIcon"></fa-icon>
+    </div>
+  </ng-template>
   <div class="title">
     <h1>
       <span class="title--main">
         Front End
-        <fa-icon [icon]="faCoffee"></fa-icon>
       </span>
       <span class="title--sub">
         developer.

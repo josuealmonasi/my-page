@@ -1,13 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
-
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  faCoffee = faTwitter;
+  mobile = false;
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.mobile = event.target.innerWidth <= 600;
+  }
+  menuIcon = faBars;
   menu = [
     { name: 'Home', url: '', current: true },
     { name: 'Resume', url: 'resume', current: false },
