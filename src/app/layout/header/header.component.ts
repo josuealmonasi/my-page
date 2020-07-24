@@ -1,5 +1,4 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-header',
@@ -8,6 +7,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 })
 export class HeaderComponent implements OnInit {
   mobile = false;
+  openMenu: boolean;
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     this.mobile = event.target.innerWidth <= 600;
@@ -21,7 +21,13 @@ export class HeaderComponent implements OnInit {
   ];
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.mobile = window.innerWidth <= 600;
+  }
+
+  onOpenMenu(): void {
+    this.openMenu = !this.openMenu;
+  }
 
   setCurrent(i: number): void {
     this.menu.map(e => {

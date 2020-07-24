@@ -1,6 +1,32 @@
 @import '../../../theme.scss';
 @import '../../../mixins.scss';
 
+@keyframes expand-menu {
+  from {
+    top: -300px;
+    background-color: transparent;
+    height: 0;
+  }
+  to {
+    top: 0;
+    height: 300px;
+    background-color: white;
+  }
+}
+
+@keyframes retract-menu {
+  from {
+    top: 0;
+    height: 300px;
+    background-color: white;
+  }
+  to {
+    top: -300px;
+    background-color: transparent;
+    height: 0;
+  }
+}
+
 .header {
   height: 80vh;
   background-size: cover;
@@ -59,6 +85,49 @@
     position: absolute;
     padding: 8px 20px;
     cursor: pointer;
+
+    &__container {
+      height: 0;
+      width: 100%;
+      background-color: transparent;
+      position: absolute;
+      top: -300px;
+
+      &.open {
+        animation-name: expand-menu;
+        animation-fill-mode: forwards;
+        animation-duration: 400ms;
+      }
+
+      &.close {
+        animation-name: retract-menu;
+        animation-fill-mode: forwards;
+        animation-duration: 400ms;
+      }
+    }
+
+    &__items {
+      .item {
+        color: $text-color;
+        text-decoration: none;
+        font-size: 20px;
+        margin: 10px;
+        padding: 4px;
+        transition: color 200ms ease-in-out, font-size 200ms ease-in-out;
+
+        &:visited {
+          color: unset;
+        }
+
+        &.current {
+          color: $hover-link;
+        }
+
+        &.mobile {
+          // TODO
+        }
+      }
+    }
   }
 
   .title {
@@ -69,7 +138,7 @@
     h1 {
       margin: auto auto auto 20%;
       @include mobile {
-        margin: auto;
+        margin: auto auto 20px auto;
       }
     }
 
@@ -91,7 +160,5 @@
         letter-spacing: unset;
       }
     }
-  }
-  .card {
   }
 }

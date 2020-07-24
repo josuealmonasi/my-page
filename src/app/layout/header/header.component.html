@@ -15,7 +15,25 @@
   </div>
   <ng-template #mobileContent>
     <div class="menu-mobile">
-      <fa-icon [icon]="menuIcon"></fa-icon>
+      <fa-icon [icon]="menuIcon" (click)="onOpenMenu()"></fa-icon>
+    </div>
+    <div
+      [ngClass]="{ open: openMenu, close: openMenu === false }"
+      class="menu-mobile__container"
+    >
+      <div class="menu-mobile__items">
+        <ng-container *ngFor="let item of menu; let i = index">
+          <a
+            class="item mobile"
+            [ngClass]="{ current: item.current }"
+            (click)="setCurrent(i)"
+            [routerLink]="[item.url]"
+            (click)="onOpenMenu()"
+            >{{ item.name }}</a
+          >
+        </ng-container>
+      </div>
+      <button (click)="onOpenMenu()">close</button>
     </div>
   </ng-template>
   <div class="title">
